@@ -1,0 +1,103 @@
+{
+  "whatsappNumber": "528117879315",
+  "socialLinks": {
+    "instagram": "https://instagram.com/polinizacioncruzadamx",
+    "facebook": "https://facebook.com/polinizacioncruzadamx"
+  },
+  "fourpack": {
+    "id": "kombucha-fourpack",
+    "name": "Four Pack (2 —ES3— + 2 +INM1+)",
+    "price": 220,
+    "compareAt": 260
+  },
+  "categories": [
+    { "id": "kombucha", "label": "Kombuchas", "cssClass": "cat-kombucha" },
+    { "id": "miel-base", "label": "Mieles Base", "cssClass": "cat-miel" },
+    { "id": "miel-herbal", "label": "Mieles Herbales", "cssClass": "cat-herbal" }
+  ],
+  "products": [
+    {
+      "id": "kombucha-mental-recovery",
+      "name": "—ES3—",
+      "code": "—ES3—",
+      "category": "kombucha",
+      "claim": "Una pausa para volver a ti.",
+      "description": "Kombucha fermentada con miel, mango, holy basil y lemongrass.",
+      "ingredients": "Mango · Holy Basil · Lemongrass",
+      "benefitTitle": "Holy Basil",
+      "benefitText": "Botánico tradicionalmente asociado con la adaptación al estrés cotidiano y el equilibrio.",
+      "cartLabel": "—ES3— · Mango, Holy Basil, Lemongrass",
+      "price": 65,
+      "imageUrl": null,
+      "available": true
+    },
+    {
+      "id": "kombucha-frutos-rojos",
+      "name": "+INM1+",
+      "code": "+INM1+",
+      "category": "kombucha",
+      "claim": "Botánicos para acompañar tu bienestar diario.",
+      "description": "Kombucha fermentada con miel, frutos rojos, elderberry y azahar.",
+      "ingredients": "Frutos rojos · Elderberry · Flor de azahar",
+      "benefitTitle": "Elderberry",
+      "benefitText": "Fuente natural de antocianinas y otros compuestos fenólicos.",
+      "cartLabel": "+INM1+ · Frutos rojos, Elderberry, Flor de azahar",
+      "price": 65,
+      "imageUrl": null,
+      "available": true
+    },
+    {
+      "id": "miel-mil-flores",
+      "name": "Miel Mil Flores",
+      "category": "miel-base",
+      "description": "Miel cruda multifloral, en su forma esencial.",
+      "ingredients": "100% miel mil flores",
+      "weight": "280 g",
+      "cartLabel": "Miel Mil Flores (280 g)",
+      "price": 120,
+      "imageUrl": null,
+      "available": true
+    },
+    {
+      "id": "miel-cremosa",
+      "name": "Miel Cremosa",
+      "category": "miel-base",
+      "description": "Textura mantequilla, cristalización controlada.",
+      "ingredients": "100% miel cristalizada en batido",
+      "weight": "280 g",
+      "cartLabel": "Miel Cremosa (280 g)",
+      "price": 120,
+      "imageUrl": null,
+      "available": true
+    },
+    {
+      "id": "miel-manzanilla",
+      "name": "Miel de Manzanilla",
+      "category": "miel-herbal",
+      "claim": "Miel para hacer una pausa.",
+      "description": "Miel infusionada con manzanilla, de perfil floral, suave y delicado.",
+      "ingredients": "Miel · Manzanilla",
+      "weight": "125 g",
+      "benefitTitle": "Manzanilla",
+      "benefitText": "Una planta tradicionalmente apreciada por su carácter suave y reconfortante.",
+      "cartLabel": "Miel de Manzanilla (125 g)",
+      "price": 140,
+      "imageUrl": null,
+      "available": true
+    },
+    {
+      "id": "miel-propoleo",
+      "name": "Miel de Propóleo",
+      "category": "miel-herbal",
+      "description": "Miel cruzada con propóleo de la misma colmena.",
+      "ingredients": "Miel · Propóleo",
+      "weight": "125 g",
+      "benefitTitle": "Propóleo",
+      "benefitText": "Aliado tradicional para apoyar las defensas frente a resfriados comunes.",
+      "cartLabel": "Miel de Propóleo (125 g)",
+      "price": 175,
+      "imageUrl": null,
+      "available": true
+    }
+  ]
+}
