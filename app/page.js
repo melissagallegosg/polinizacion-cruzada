@@ -350,7 +350,7 @@ export default function HomePage() {
           <div className="container">
             <div className="kombucha-head">
               <span className="eyebrow">Kombucha Jun</span>
-              <h2 className="section-title" style={{ marginTop: "14px" }}>
+              <h2 className="section-title" style={{ marginTop: "25px" }}>
                 Fermentada con miel.
               </h2>
               <p className="kombucha-sub">No con azúcar refinada</p>
