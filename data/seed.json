@@ -6,7 +6,7 @@
   },
   "fourpack": {
     "id": "kombucha-fourpack",
-    "name": "Four Pack (2 —ES3— + 2 +INM1+)",
+    "name": "4 Pack (2 de cada una de nuestras variedades)",
     "price": 220,
     "compareAt": 260
   },
@@ -26,22 +26,22 @@
       "ingredients": "Mango · Holy Basil · Lemongrass",
       "benefitTitle": "Holy Basil",
       "benefitText": "Botánico tradicionalmente asociado con la adaptación al estrés cotidiano y el equilibrio.",
-      "cartLabel": "—ES3— · Mango, Holy Basil, Lemongrass",
+      "cartLabel": "-ES3 · Mango, Holy Basil, Lemongrass",
       "price": 65,
       "imageUrl": null,
       "available": true
     },
     {
       "id": "kombucha-frutos-rojos",
-      "name": "+INM1+",
-      "code": "+INM1+",
+      "name": "INM1+",
+      "code": "INM1+",
       "category": "kombucha",
       "claim": "Botánicos para acompañar tu bienestar diario.",
       "description": "Kombucha fermentada con miel, frutos rojos, elderberry y azahar.",
       "ingredients": "Frutos rojos · Elderberry · Flor de azahar",
       "benefitTitle": "Elderberry",
       "benefitText": "Fuente natural de antocianinas y otros compuestos fenólicos.",
-      "cartLabel": "+INM1+ · Frutos rojos, Elderberry, Flor de azahar",
+      "cartLabel": "INM1+ · Frutos rojos, Elderberry, Flor de azahar",
       "price": 65,
       "imageUrl": null,
       "available": true
