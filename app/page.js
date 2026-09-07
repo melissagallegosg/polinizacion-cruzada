@@ -262,25 +262,20 @@ export default function HomePage() {
       <section className="hero" id="top">
         <div className="orbit" />
         <div className="orbit orbit-2" />
-        <div className="hero-eyebrow">Fermentos &amp; Botánicos — Monterrey, México</div>
         <h1>MELS</h1>
-        <p className="hero-claim">Dos colonias. Un solo cultivo vivo.</p>
+        <p className="hero-claim">Miel × Fermentación × Botánicos</p>
         <p className="hero-sub">
-          Kombucha, miel y hierbas de origen verificado, fermentadas en Monterrey en lotes
-          pequeños y numerados.
+          Alimentos vivos creados a partir del encuentro entre miel, fermentación y plantas.
         </p>
         <a href="#kombucha" className="hero-cta">
           Ver catálogo →
         </a>
         <div className="kombucha-facts" style={{ marginTop: "40px" }}>
           <div className="fact-pill">
-            <b>Sin pasteurizar</b> — cultivos vivos, no de concentrado.
+            <b>Sin pasteurizar</b> — cultivos vivos.
           </div>
           <div className="fact-pill">
-            <b>Lote numerado</b> — cada tanda documentada, no genérica.
-          </div>
-          <div className="fact-pill">
-            <b>Origen verificado</b> — colmena y cultivo propios.
+            <b>Extracciones herbales estandarizadas</b> — mismo perfil, cada vez.
           </div>
         </div>
       </section>
@@ -323,7 +318,7 @@ export default function HomePage() {
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
               El cruce
-              <b>Gomitas, miel macha, jabones</b>
+              <b>Donde ambas colonias se combinan</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
@@ -333,21 +328,11 @@ export default function HomePage() {
           </div>
 
           <p className="universe-text">
-            Una colmena y un cultivo de kombucha son la misma idea contada dos veces: una
-            colonia que transforma materia prima en algo vivo. MELS documenta, con el mismo
-            rigor en ambos frentes, dos colonias que fermentan — la colmena que convierte{" "}
-            <em>néctar en miel</em>, y el cultivo que convierte <em>té en kombucha</em> — y
-            construye cada producto exactamente en el punto donde ambas se cruzan.
-            <br />
-            <br />
-            La miel no es un endulzante y la kombucha no es una bebida más: ambas son el
-            resultado visible de una colonia viva que trabajó en el tiempo. Fermentar toma
-            días; madurar una miel toma estaciones. La escasez de MELS es literal: nace del
-            reloj biológico de dos colonias, no de una estrategia de lanzamiento.
+            La colmena convierte néctar en miel; el cultivo convierte té en kombucha. MELS
+            construye cada producto en el punto exacto donde esas dos colonias se cruzan.
           </p>
           <p className="universe-final">
-            Colonia, cultivo, cosecha, lote: el vocabulario de un laboratorio de fermentación,
-            no de un supermercado.
+            Colonia, cultivo, cosecha: el vocabulario de un laboratorio de fermentación.
           </p>
         </div>
       </section>
@@ -508,8 +493,7 @@ export default function HomePage() {
           <h3>Tenemos más productos del cruce esperándote en WhatsApp.</h3>
           <p>
             Nuestro catálogo completo incluye más creaciones que aún no están en esta
-            página — gomitas, jabones y ediciones de temporada. Escríbenos y te lo
-            compartimos.
+            página. Escríbenos y te lo compartimos.
           </p>
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(catalogMsg)}`}
@@ -522,15 +506,14 @@ export default function HomePage() {
 
       <section className="strip">
         <span className="eyebrow" style={{ textAlign: "center", display: "block" }}>
-          Hecho en Monterrey, México
+          Hecho en México
         </span>
       </section>
 
       <section className="closing" id="historia">
         <h2>
-          Dos colonias.
-          <br />
-          Un solo cultivo.
+          Miel × Fermentación
+          <br />× Botánicos.
         </h2>
         <a href="#kombucha" className="closing-cta">
           Explorar el catálogo
@@ -542,11 +525,7 @@ export default function HomePage() {
           <div className="footer-brand">
             <span className="logo-mark lg" aria-hidden="true" style={{ marginBottom: "12px", display: "block" }} />
             <div className="logo">MELS</div>
-            <p>
-              Kombucha · Miel · Fermentos botánicos
-              <br />
-              Monterrey, México
-            </p>
+            <p>Kombucha · Miel · Fermentos botánicos</p>
           </div>
           <div className="footer-links">
             <div className="footer-col">
