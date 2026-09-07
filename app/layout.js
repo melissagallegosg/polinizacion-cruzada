@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "POLINIZACIÓN CRUZADA — De la miel nace el universo",
+  title: "MELS — Fermentos & Botánicos. Dos colonias vivas, un solo cultivo.",
   description:
-    "Mieles, fermentos y botánicos — México. Kombucha fermentada con miel, mieles crudas y mieles herbales.",
+    "Kombucha, miel y hierbas de origen verificado, fermentadas en Monterrey en lotes pequeños y numerados.",
 };
 
 export default function RootLayout({ children }) {

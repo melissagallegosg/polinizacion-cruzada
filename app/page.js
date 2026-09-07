@@ -194,7 +194,7 @@ export default function HomePage() {
 
   function handleWhatsappOrder() {
     if (cart.length === 0) return;
-    let msg = "Hola, quiero hacer este pedido de Polinización Cruzada:\n\n";
+    let msg = "Hola, quiero hacer este pedido a MELS:\n\n";
     cart.forEach((i) => {
       msg += `${i.qty} x ${i.name} — $${i.price * i.qty} MXN\n`;
     });
@@ -203,7 +203,7 @@ export default function HomePage() {
   }
 
   const catalogMsg =
-    "Hola, vi la página de Polinización Cruzada y me gustaría conocer el catálogo completo de productos derivados de la miel 🍯";
+    "Hola, vi la página de MELS y me gustaría conocer el catálogo completo de kombucha, miel y fermentos botánicos 🍯";
 
   return (
     <>
@@ -233,14 +233,12 @@ export default function HomePage() {
         <div className="nav-wrap">
           <a href="#top" className="logo-wrap">
             <span className="logo-mark" aria-hidden="true" />
-            <span className="logo">
-              POLINIZACIÓN<span>·</span>CRUZADA
-            </span>
+            <span className="logo">MELS</span>
           </a>
           <nav>
             <ul>
               <li>
-                <a href="#universo">Universo</a>
+                <a href="#concepto">El cruce</a>
               </li>
               <li>
                 <a href="#kombucha">Kombucha</a>
@@ -264,83 +262,92 @@ export default function HomePage() {
       <section className="hero" id="top">
         <div className="orbit" />
         <div className="orbit orbit-2" />
-        <div className="hero-eyebrow">Mieles · Fermentos · Botánicos — México</div>
-        <h1>
-          POLINIZACIÓN
-          <br />
-          CRUZADA
-        </h1>
-        <p className="hero-claim">&quot;De la miel nace el universo.&quot;</p>
+        <div className="hero-eyebrow">Fermentos &amp; Botánicos — Monterrey, México</div>
+        <h1>MELS</h1>
+        <p className="hero-claim">Dos colonias. Un solo cultivo vivo.</p>
         <p className="hero-sub">
-          Una colección de mieles, fermentos y botánicos nacidos de la relación entre naturaleza,
-          alimento y transformación.
+          Kombucha, miel y hierbas de origen verificado, fermentadas en Monterrey en lotes
+          pequeños y numerados.
         </p>
         <a href="#kombucha" className="hero-cta">
-          Explorar el universo →
+          Ver catálogo →
         </a>
+        <div className="kombucha-facts" style={{ marginTop: "40px" }}>
+          <div className="fact-pill">
+            <b>Sin pasteurizar</b> — cultivos vivos, no de concentrado.
+          </div>
+          <div className="fact-pill">
+            <b>Lote numerado</b> — cada tanda documentada, no genérica.
+          </div>
+          <div className="fact-pill">
+            <b>Origen verificado</b> — colmena y cultivo propios.
+          </div>
+        </div>
       </section>
 
-      <section className="section" id="universo">
+      <section className="section" id="concepto">
         <div className="container">
           <div className="section-intro">
-            <span className="eyebrow">El universo</span>
+            <span className="eyebrow">El concepto</span>
             <h2 className="section-title" style={{ marginTop: "14px" }}>
-              Naturaleza → Intercambio
-              <br />→ Transformación → Creación
+              Dos colonias,
+              <br />
+              un solo cultivo.
             </h2>
+            <p>
+              La miel y la kombucha nunca fueron categorías distintas: son la misma lógica
+              fermentada, vista desde dos colonias diferentes.
+            </p>
           </div>
 
           <div className="universe-chain">
             <div className="uc-step">
-              Flor
-              <b>Néctar y polen</b>
-            </div>
-            <div className="uc-arrow">⟶</div>
-            <div className="uc-step">
-              Abeja
-              <b>Recolecta y transporta</b>
-            </div>
-            <div className="uc-arrow">⟶</div>
-            <div className="uc-step">
-              Otra flor
-              <b>Polinización cruzada</b>
+              Colmena
+              <b>Néctar y trabajo de las abejas</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
               Miel
-              <b>El punto de partida</b>
+              <b>Resultado de una colonia</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
-              Botánicos
-              <b>Se cruzan</b>
+              Cultivo
+              <b>Té y trabajo del SCOBY</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
-              Fermentación
-              <b>Transforma</b>
+              Kombucha
+              <b>Resultado de la otra colonia</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
-              Nuevos productos
-              <b>Nace algo distinto</b>
+              El cruce
+              <b>Gomitas, miel macha, jabones</b>
+            </div>
+            <div className="uc-arrow">⟶</div>
+            <div className="uc-step">
+              MELS
+              <b>Un solo cultivo vivo</b>
             </div>
           </div>
 
           <p className="universe-text">
-            Una flor produce néctar para alimentar a la abeja y polen para reproducirse. Cuando la
-            abeja la visita, recoge el néctar y, sin saberlo, lleva consigo el polen de esa flor. Al
-            visitar otra flor, parte de ese polen llega a ella — así ocurre la{" "}
-            <em>polinización cruzada</em>.
+            Una colmena y un cultivo de kombucha son la misma idea contada dos veces: una
+            colonia que transforma materia prima en algo vivo. MELS documenta, con el mismo
+            rigor en ambos frentes, dos colonias que fermentan — la colmena que convierte{" "}
+            <em>néctar en miel</em>, y el cultivo que convierte <em>té en kombucha</em> — y
+            construye cada producto exactamente en el punto donde ambas se cruzan.
             <br />
             <br />
-            El néctar que la abeja recolecta se transforma en miel. Y nosotros tomamos esa miel como
-            punto de partida para cruzarla con fermentos, botánicos y alimentos, creando nuevas
-            combinaciones.
+            La miel no es un endulzante y la kombucha no es una bebida más: ambas son el
+            resultado visible de una colonia viva que trabajó en el tiempo. Fermentar toma
+            días; madurar una miel toma estaciones. La escasez de MELS es literal: nace del
+            reloj biológico de dos colonias, no de una estrategia de lanzamiento.
           </p>
           <p className="universe-final">
-            Cuando existe intercambio, existe la posibilidad de transformar lo que ya existe en algo
-            distinto.
+            Colonia, cultivo, cosecha, lote: el vocabulario de un laboratorio de fermentación,
+            no de un supermercado.
           </p>
         </div>
       </section>
@@ -349,7 +356,7 @@ export default function HomePage() {
         <section className="section kombucha-section" id="kombucha">
           <div className="container">
             <div className="kombucha-head">
-              <span className="eyebrow">Kombucha Jun</span>
+              <span className="eyebrow">Colonia Kombucha</span>
               <h2 className="section-title" style={{ marginTop: "25px" }}>
                 Fermentada con miel.
               </h2>
@@ -362,8 +369,11 @@ export default function HomePage() {
                 fermentación.
               </div>
               <div className="fact-pill">
-                <b>Fresca · No pasteurizada</b> — conserva los microorganismos vivos propios de la
-                fermentación.
+                <b>Base Jun</b> — kombucha con miel de origen desde el primer día.
+              </div>
+              <div className="fact-pill">
+                <b>Fresca · No pasteurizada</b> — conserva los microorganismos vivos propios de
+                la fermentación.
               </div>
             </div>
             <p
@@ -391,7 +401,9 @@ export default function HomePage() {
                 <div className="fourpack-info">
                   <span className="eyebrow">Opción destacada</span>
                   <h3>{fourpack.name}</h3>
-                  <p>La forma más conveniente de probar los dos sabores. Cuatro botellas, un solo pedido.</p>
+                  <p>
+                    La forma más conveniente de conocer las dos colonias en un solo pedido.
+                  </p>
                 </div>
                 <div className="fourpack-price">
                   <span className="was">${fourpack.compareAt} MXN</span>
@@ -412,11 +424,11 @@ export default function HomePage() {
         <section className="section" id="mieles">
           <div className="container">
             <div className="section-intro">
-              <span className="eyebrow">Mieles base</span>
+              <span className="eyebrow">Colonia Miel</span>
               <h2 className="section-title" style={{ marginTop: "14px" }}>
-                La miel, en su forma esencial.
+                De la colmena, en su forma esencial.
               </h2>
-              <p>Precio del producto — el envío se cotiza aparte por WhatsApp.</p>
+              <p>Origen verificado. Precio del producto — el envío se cotiza aparte por WhatsApp.</p>
             </div>
             <div className="grid">
               {(productsByCategory["miel-base"] || []).map((p) => (
@@ -429,13 +441,14 @@ export default function HomePage() {
         <section className="section">
           <div className="container">
             <div className="section-intro">
-              <span className="eyebrow">Mieles herbales</span>
+              <span className="eyebrow">Miel + botánicos</span>
               <h2 className="section-title" style={{ marginTop: "14px" }}>
-                Miel + botánicos.
+                El cruce mínimo.
               </h2>
               <p>
-                Ingredientes, sabor, elaboración y experiencia sensorial — sin promesas terapéuticas.
-                Precio del producto; el envío se cotiza aparte por WhatsApp.
+                Miel cruzada con hierbas y propóleo de la misma colmena — ingredientes,
+                elaboración y experiencia sensorial, sin promesas terapéuticas. Precio del
+                producto; el envío se cotiza aparte por WhatsApp.
               </p>
             </div>
             <div className="grid">
@@ -465,13 +478,38 @@ export default function HomePage() {
         ))}
       </div>
 
+      <section className="section">
+        <div className="container">
+          <div className="section-intro">
+            <span className="eyebrow">Pedidos y entrega</span>
+            <h2 className="section-title" style={{ marginTop: "14px" }}>
+              ¿Cómo llega?
+            </h2>
+          </div>
+          <div className="kombucha-facts">
+            <div className="fact-pill">
+              <b>Monterrey y área metropolitana</b> — coordinamos entrega a domicilio por
+              WhatsApp.
+            </div>
+            <div className="fact-pill">
+              <b>¿Fuera de Monterrey?</b> — escríbenos y vemos opciones de envío.
+            </div>
+            <div className="fact-pill">
+              <b>Recién salida del refri</b> — sabe mejor fría; cuida la cadena de frío del
+              cultivo vivo.
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wa-cta">
           <span className="eyebrow">¿Buscas algo más?</span>
-          <h3>Tenemos más productos derivados de la miel esperándote en WhatsApp.</h3>
+          <h3>Tenemos más productos del cruce esperándote en WhatsApp.</h3>
           <p>
-            Nuestro catálogo completo de WhatsApp incluye más creaciones a base de miel que aún no
-            están en esta página. Escríbenos y te lo compartimos.
+            Nuestro catálogo completo incluye más creaciones que aún no están en esta
+            página — gomitas, jabones y ediciones de temporada. Escríbenos y te lo
+            compartimos.
           </p>
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(catalogMsg)}`}
@@ -484,18 +522,18 @@ export default function HomePage() {
 
       <section className="strip">
         <span className="eyebrow" style={{ textAlign: "center", display: "block" }}>
-          Hecho en México
+          Hecho en Monterrey, México
         </span>
       </section>
 
       <section className="closing" id="historia">
         <h2>
-          De la miel
+          Dos colonias.
           <br />
-          nace el universo.
+          Un solo cultivo.
         </h2>
         <a href="#kombucha" className="closing-cta">
-          Explorar el universo
+          Explorar el catálogo
         </a>
       </section>
 
@@ -503,13 +541,11 @@ export default function HomePage() {
         <div className="footer-grid">
           <div className="footer-brand">
             <span className="logo-mark lg" aria-hidden="true" style={{ marginBottom: "12px", display: "block" }} />
-            <div className="logo">
-              POLINIZACIÓN<span style={{ color: "var(--honey1)" }}>·</span>CRUZADA
-            </div>
+            <div className="logo">MELS</div>
             <p>
-              Kombucha · Mieles · Fermentos botánicos
+              Kombucha · Miel · Fermentos botánicos
               <br />
-              México
+              Monterrey, México
             </p>
           </div>
           <div className="footer-links">
@@ -521,7 +557,7 @@ export default function HomePage() {
             </div>
             <div className="footer-col">
               <h4>Navegación</h4>
-              <a href="#universo">Universo</a>
+              <a href="#concepto">El cruce</a>
               <a href="#kombucha">Kombucha</a>
               <a href="#mieles">Mieles</a>
             </div>
@@ -545,7 +581,7 @@ export default function HomePage() {
             <p className="empty-cart">
               Tu carrito está vacío.
               <br />
-              Explora el universo y añade algo delicioso.
+              Explora el catálogo y añade algo delicioso.
             </p>
           ) : (
             cart.map((item) => {
