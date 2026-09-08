@@ -90,6 +90,7 @@ export default function HomePage() {
   const [store, setStore] = useState(null);
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
   const [subFrequency, setSubFrequency] = useState("15dias");
   const [subQty, setSubQty] = useState(1);
   const starsRef = useRef(null);
@@ -220,6 +221,15 @@ export default function HomePage() {
   const catalogMsg =
     "Hola, vi la página de MELS y me gustaría conocer el catálogo completo de kombucha, miel y fermentos botánicos 🍯";
 
+  if (!store) {
+    return (
+      <div className="page-loader" role="status" aria-live="polite">
+        <span className="logo-mark lg" aria-hidden="true" />
+        <span className="page-loader-text">Cargando MELS…</span>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="stars" id="stars" ref={starsRef} />
@@ -250,8 +260,8 @@ export default function HomePage() {
             <span className="logo-mark" aria-hidden="true" />
             <span className="logo">MELS</span>
           </a>
-          <nav>
-            <ul>
+          <nav className={navOpen ? "open" : ""}>
+            <ul onClick={() => setNavOpen(false)}>
               <li>
                 <a href="#concepto">El cruce</a>
               </li>
@@ -275,6 +285,14 @@ export default function HomePage() {
           <div className="nav-right">
             <button className="cart-btn" onClick={() => setCartOpen(true)} aria-label="Abrir carrito">
               🛒 Carrito <span className="cart-count">{cartCount}</span>
+            </button>
+            <button
+              className="menu-toggle"
+              onClick={() => setNavOpen((v) => !v)}
+              aria-label={navOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={navOpen}
+            >
+              {navOpen ? "✕" : "☰"}
             </button>
           </div>
         </div>
