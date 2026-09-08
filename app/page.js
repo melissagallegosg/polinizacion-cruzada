@@ -306,55 +306,62 @@ export default function HomePage() {
           <div className="section-intro">
             <span className="eyebrow">El concepto</span>
             <h2 className="section-title" style={{ marginTop: "14px" }}>
-              Dos colonias,
+              Tres elementos.
               <br />
-              un solo cultivo.
+              Una misma fórmula.
             </h2>
-            <p>
-              La miel y la kombucha nunca fueron categorías distintas: son la misma lógica
-              fermentada, vista desde dos colonias diferentes.
-            </p>
+            <p>MELS nace de combinar tres elementos que transforman y aportan algo distinto:</p>
           </div>
 
-          <div className="universe-chain">
-            <div className="uc-step">
-              Colmena
-              <b>Néctar y trabajo de las abejas</b>
+          <div className="kombucha-facts">
+            <div className="fact-pill">
+              <b>Miel</b> — el origen. Dulzura, cuerpo y profundidad.
             </div>
-            <div className="uc-arrow">⟶</div>
+            <div className="fact-pill">
+              <b>Fermentación</b> — el proceso. Tiempo, transformación y complejidad.
+            </div>
+            <div className="fact-pill">
+              <b>Botánicos</b> — la materia. Plantas, aromas, sabores y carácter.
+            </div>
+          </div>
+
+          <p className="universe-final">Miel × Fermentación × Botánicos</p>
+
+          <p className="universe-text">
+            No los pensamos como ingredientes separados ni como categorías independientes.
+            Son la base de cada fórmula MELS.
+            <br />
+            <br />
+            A partir de ellos creamos JUN, mieles y nuevos formatos que exploran distintas
+            plantas, sabores y formas de incorporar botánicos a la vida cotidiana. Una
+            fórmula que puede tomar muchas formas.
+          </p>
+
+          <p className="eyebrow" style={{ textAlign: "center", marginTop: "56px" }}>
+            De dónde parte cada elemento
+          </p>
+
+          <div className="universe-chain" style={{ marginTop: "24px" }}>
             <div className="uc-step">
               Miel
-              <b>Resultado de una colonia</b>
+              <b>Néctar transformado por las abejas</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
-              Cultivo
-              <b>Té y trabajo del SCOBY</b>
+              Fermentación
+              <b>Té transformado por microorganismos</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
-              Kombucha
-              <b>Resultado de la otra colonia</b>
-            </div>
-            <div className="uc-arrow">⟶</div>
-            <div className="uc-step">
-              El cruce
-              <b>Donde ambas colonias se combinan</b>
+              Botánicos
+              <b>Plantas que aportan sabor, aroma y carácter</b>
             </div>
             <div className="uc-arrow">⟶</div>
             <div className="uc-step">
               MELS
-              <b>Un solo cultivo vivo</b>
+              <b>Alimentos creados a partir de los tres</b>
             </div>
           </div>
-
-          <p className="universe-text">
-            La colmena convierte néctar en miel; el cultivo convierte té en kombucha. MELS
-            construye cada producto en el punto exacto donde esas dos colonias se cruzan.
-          </p>
-          <p className="universe-final">
-            Colonia, cultivo, cosecha: el vocabulario de un laboratorio de fermentación.
-          </p>
         </div>
       </section>
 
@@ -362,11 +369,19 @@ export default function HomePage() {
         <section className="section kombucha-section" id="kombucha">
           <div className="container">
             <div className="kombucha-head">
-              <span className="eyebrow">Colonia Kombucha</span>
+              <span className="eyebrow">Kombuchas JUN</span>
               <h2 className="section-title" style={{ marginTop: "25px" }}>
-                Fermentada con miel.
+                Fermentos vivos elaborados con té, miel y botánicos.
               </h2>
-              <p className="kombucha-sub">No con azúcar refinada</p>
+              <p className="kombucha-sub" style={{ maxWidth: "620px", lineHeight: "1.6" }}>
+                Nuestro JUN parte de una fermentación suave donde la miel se encuentra con el
+                té y distintas plantas para crear bebidas de perfil fresco, complejo y
+                naturalmente ácido.
+                <br />
+                <br />
+                Cada fórmula combina botánicos y sabores en una experiencia pensada para
+                disfrutarse fría, como parte de tu día.
+              </p>
             </div>
 
             <div className="kombucha-facts">
@@ -407,37 +422,25 @@ export default function HomePage() {
         <section className="section" id="mieles">
           <div className="container">
             <div className="section-intro">
-              <span className="eyebrow">Colonia Miel</span>
+              <span className="eyebrow">Mieles</span>
               <h2 className="section-title" style={{ marginTop: "14px" }}>
-                De la colmena, en su forma esencial.
-              </h2>
-              <p>Origen verificado. Precio del producto — el envío se cotiza aparte por WhatsApp.</p>
-            </div>
-            <div className="grid">
-              {(productsByCategory["miel-base"] || []).map((p) => (
-                <ProductCard key={p.id} product={p} category={categoriesById["miel-base"]} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <div className="section-intro">
-              <span className="eyebrow">Miel + botánicos</span>
-              <h2 className="section-title" style={{ marginTop: "14px" }}>
-                El cruce mínimo.
+                Miel transformada con fermentación y botánicos.
               </h2>
               <p>
-                Miel cruzada con hierbas y propóleo de la misma colmena — ingredientes,
-                elaboración y experiencia sensorial, sin promesas terapéuticas. Precio del
-                producto; el envío se cotiza aparte por WhatsApp.
+                Combinamos miel con cultivos de fermentación y plantas seleccionadas para
+                crear fórmulas de sabor, textura y carácter propios.
+                <br />
+                <br />
+                Pequeñas mezclas, ingredientes reales y una nueva forma de incorporar
+                botánicos a tu día.
               </p>
             </div>
             <div className="grid">
-              {(productsByCategory["miel-herbal"] || []).map((p) => (
-                <ProductCard key={p.id} product={p} category={categoriesById["miel-herbal"]} />
-              ))}
+              {[...(productsByCategory["miel-base"] || []), ...(productsByCategory["miel-herbal"] || [])].map(
+                (p) => (
+                  <ProductCard key={p.id} product={p} category={categoriesById[p.category]} />
+                )
+              )}
             </div>
           </div>
         </section>
