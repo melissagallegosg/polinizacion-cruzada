@@ -142,10 +142,10 @@ export default function AdminPage() {
         setError(data.error || "No se pudo subir la imagen.");
         return;
       }
-      const nextStore = {
-        ...store,
-        products: store.products.map((p) => (p.id === productId ? { ...p, imageUrl: data.url } : p)),
-      };
+      const isFourpack = store?.fourpack && productId === store.fourpack.id;
+      const nextStore = isFourpack
+        ? { ...store, fourpack: { ...store.fourpack, imageUrl: data.url } }
+        : { ...store, products: store.products.map((p) => (p.id === productId ? { ...p, imageUrl: data.url } : p)) };
       await persist(nextStore);
     } finally {
       setUploadingId(null);
@@ -157,6 +157,11 @@ export default function AdminPage() {
       ...store,
       products: store.products.map((p) => (p.id === productId ? { ...p, imageUrl: null } : p)),
     };
+    await persist(nextStore);
+  }
+
+  async function handleDeleteFourpackImage() {
+    const nextStore = { ...store, fourpack: { ...store.fourpack, imageUrl: null } };
     await persist(nextStore);
   }
 
@@ -294,10 +299,51 @@ export default function AdminPage() {
           <div>
             <div className="admin-toolbar">
               <div className="admin-cat-title" style={{ margin: "36px 0 0" }}>
-                Four Pack (oferta destacada)
+                Suscripción / Four Pack (oferta destacada)
               </div>
             </div>
             <div className="admin-card">
+              <div className="admin-img-col">
+                {store.fourpack.imageUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="admin-img-preview" src={store.fourpack.imageUrl} alt={store.fourpack.name} />
+                ) : (
+                  <div
+                    className="admin-img-preview"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--pearl-dim)",
+                      fontSize: "10px",
+                      textAlign: "center",
+                      padding: "8px",
+                    }}
+                  >
+                    Sin imagen
+                  </div>
+                )}
+                <div className="admin-img-actions">
+                  <button
+                    className="admin-btn"
+                    onClick={() => triggerUpload(store.fourpack.id)}
+                    disabled={uploadingId === store.fourpack.id}
+                  >
+                    {uploadingId === store.fourpack.id
+                      ? "Subiendo…"
+                      : store.fourpack.imageUrl
+                      ? "Cambiar imagen"
+                      : "Subir imagen"}
+                  </button>
+                  <button
+                    className="admin-btn danger"
+                    onClick={() => handleDeleteFourpackImage()}
+                    disabled={!store.fourpack.imageUrl}
+                  >
+                    Eliminar imagen
+                  </button>
+                </div>
+              </div>
               <div className="admin-fields" style={{ width: "100%" }}>
                 <div>
                   <label>Nombre</label>
@@ -309,7 +355,7 @@ export default function AdminPage() {
                 </div>
                 <div className="field-row">
                   <div>
-                    <label>Precio (MXN)</label>
+                    <label>Precio de la suscripción (MXN)</label>
                     <input
                       type="number"
                       min="0"
@@ -325,6 +371,28 @@ export default function AdminPage() {
                       value={store.fourpack.compareAt || 0}
                       onChange={(e) => updateFourpackField("compareAt", parseFloat(e.target.value) || 0)}
                     />
+                  </div>
+                  <div>
+                    <label>Botellas incluidas</label>
+                    <input
+                      type="number"
+                      min="1"
+                      value={store.fourpack.units || 4}
+                      onChange={(e) => updateFourpackField("units", parseInt(e.target.value, 10) || 1)}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label>Disponibilidad</label>
+                  <div className="avail-row">
+                    <button
+                      type="button"
+                      className={`switch ${store.fourpack.available ? "on" : ""}`}
+                      onClick={() => updateFourpackField("available", !store.fourpack.available)}
+                    />
+                    <span className="avail-label">
+                      {store.fourpack.available ? "Disponible" : "Agotado"}
+                    </span>
                   </div>
                 </div>
                 <div className="admin-save-row">

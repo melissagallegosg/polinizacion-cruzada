@@ -90,6 +90,8 @@ export default function HomePage() {
   const [store, setStore] = useState(null);
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
+  const [subFrequency, setSubFrequency] = useState("15dias");
+  const [subQty, setSubQty] = useState(1);
   const starsRef = useRef(null);
   const gridsRef = useRef(null);
 
@@ -191,6 +193,19 @@ export default function HomePage() {
   const whatsappNumber = store?.whatsappNumber || "";
   const socialLinks = store?.socialLinks || {};
   const fourpack = store?.fourpack;
+  const fourpackUnits = fourpack?.units || 4;
+  const fourpackUnitPrice = fourpack ? Math.round((fourpack.price / fourpackUnits) * 100) / 100 : 0;
+  const frequencyLabel = subFrequency === "15dias" ? "Entrega cada 15 días" : "Entrega cada mes";
+
+  function handleAddSubscription() {
+    if (!fourpack || !fourpack.available) return;
+    addToCart(
+      `${fourpack.id}-${subFrequency}`,
+      `${fourpack.name} · Suscripción (${frequencyLabel})`,
+      fourpack.price,
+      subQty
+    );
+  }
 
   function handleWhatsappOrder() {
     if (cart.length === 0) return;
@@ -244,10 +259,16 @@ export default function HomePage() {
                 <a href="#kombucha">Kombucha</a>
               </li>
               <li>
+                <a href="#suscripcion">Suscripción</a>
+              </li>
+              <li>
                 <a href="#mieles">Mieles</a>
               </li>
               <li>
-                <a href="#historia">Nuestra historia</a>
+                <a href="#nosotros">Nosotros</a>
+              </li>
+              <li>
+                <a href="#negocio">Tu negocio</a>
               </li>
             </ul>
           </nav>
@@ -380,29 +401,6 @@ export default function HomePage() {
                 <ProductCard key={p.id} product={p} category={categoriesById["kombucha"]} />
               ))}
             </div>
-
-            {fourpack && (
-              <div className="fourpack">
-                <div className="fourpack-info">
-                  <span className="eyebrow">Opción destacada</span>
-                  <h3>{fourpack.name}</h3>
-                  <p>
-                    La forma más conveniente de conocer las dos colonias en un solo pedido.
-                  </p>
-                </div>
-                <div className="fourpack-price">
-                  <span className="was">${fourpack.compareAt} MXN</span>
-                  <span className="now">${fourpack.price} MXN</span>
-                  <button
-                    className="add-btn"
-                    style={{ marginTop: "6px" }}
-                    onClick={() => addToCart(fourpack.id, fourpack.name, fourpack.price, 1)}
-                  >
-                    Añadir al carrito
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
         </section>
 
@@ -462,6 +460,171 @@ export default function HomePage() {
           </section>
         ))}
       </div>
+
+      <section className="section" id="suscripcion">
+        <div className="container">
+          <div className="section-intro">
+            <span className="eyebrow">Suscripción</span>
+            <h2 className="section-title" style={{ marginTop: "14px" }}>
+              Que no te falte.
+            </h2>
+            <p>Kombucha en automático, con descuento y sin tener que acordarte de pedir.</p>
+          </div>
+
+          {fourpack && (
+            <div className="sub-card">
+              <div className="sub-img-wrap">
+                {fourpack.imageUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={fourpack.imageUrl} alt={fourpack.name} />
+                ) : (
+                  <div className="placeholder-img">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="21" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+                      <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.7" />
+                      <path d="M24 3v6M24 39v6M3 24h6M39 24h6" stroke="currentColor" strokeWidth="1.2" opacity="0.4" />
+                    </svg>
+                    <span>Sin fotografía aún</span>
+                  </div>
+                )}
+              </div>
+              <div className="sub-info">
+                <h3>{fourpack.name}</h3>
+                <div className="sub-price-row">
+                  <span className="now">${fourpack.price} MXN</span>
+                  <span className="was">${fourpack.compareAt} MXN</span>
+                  <span className={`sub-badge ${fourpack.available ? "" : "off"}`}>
+                    {fourpack.available ? "En stock" : "Agotado"}
+                  </span>
+                </div>
+                <p className="sub-unit-price">
+                  Equivale a ${fourpackUnitPrice} MXN por botella ({fourpackUnits} botellas).
+                </p>
+
+                <div className="sub-freq">
+                  <label className={`sub-freq-option ${subFrequency === "15dias" ? "active" : ""}`}>
+                    <input
+                      type="radio"
+                      name="frequency"
+                      checked={subFrequency === "15dias"}
+                      onChange={() => setSubFrequency("15dias")}
+                    />
+                    Entrega cada 15 días
+                  </label>
+                  <label className={`sub-freq-option ${subFrequency === "mes" ? "active" : ""}`}>
+                    <input
+                      type="radio"
+                      name="frequency"
+                      checked={subFrequency === "mes"}
+                      onChange={() => setSubFrequency("mes")}
+                    />
+                    Entrega cada mes
+                  </label>
+                </div>
+
+                <div className="sub-actions">
+                  <div className="sub-qty">
+                    <button type="button" onClick={() => setSubQty((q) => Math.max(1, q - 1))}>
+                      −
+                    </button>
+                    <span>{subQty}</span>
+                    <button type="button" onClick={() => setSubQty((q) => q + 1)}>
+                      +
+                    </button>
+                  </div>
+                  <button
+                    className="add-btn"
+                    onClick={handleAddSubscription}
+                    disabled={!fourpack.available}
+                  >
+                    {fourpack.available ? "Añadir al carrito" : "Agotado"}
+                  </button>
+                </div>
+
+                <p className="sub-note">
+                  Tú eliges cada cuánto llega; nosotros nos encargamos del resto. Puedes
+                  cambiar o cancelar la frecuencia cuando quieras escribiéndonos por
+                  WhatsApp.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="section" id="nosotros">
+        <div className="container">
+          <div className="section-intro">
+            <span className="eyebrow">Nosotros</span>
+            <h2 className="section-title" style={{ marginTop: "14px" }}>
+              MELS nace del encuentro.
+            </h2>
+            <p>
+              Creemos que los alimentos pueden ser mucho más que algo que consumes. Pueden
+              ser una forma cotidiana de explorar plantas, sabores y procesos vivos.
+            </p>
+          </div>
+
+          <p className="universe-text" style={{ textAlign: "center" }}>
+            Por eso creamos MELS alrededor de tres elementos:
+          </p>
+
+          <div className="kombucha-facts">
+            <div className="fact-pill">
+              <b>Miel</b> — aporta el origen.
+            </div>
+            <div className="fact-pill">
+              <b>Fermentación</b> — transforma.
+            </div>
+            <div className="fact-pill">
+              <b>Botánicos</b> — aportan diversidad, carácter y propósito.
+            </div>
+          </div>
+
+          <p className="universe-text">
+            Los cruzamos en alimentos funcionales pensados para integrarse fácilmente a tu
+            día a día. No buscamos hacer productos complicados ni convertir las plantas en
+            promesas extraordinarias. Nos interesa crear fórmulas honestas, bien pensadas y
+            deliciosas, donde cada ingrediente tenga una razón de estar.
+            <br />
+            <br />
+            MELS es nuestra manera de explorar ese cruce.
+          </p>
+          <p className="universe-final">Alimentos vivos. Botánicos. Hechos para tu día.</p>
+        </div>
+      </section>
+
+      <section className="section" id="negocio">
+        <div className="wa-cta">
+          <span className="eyebrow">MELS en tu negocio</span>
+          <h3>La bebida que tus clientes ya están buscando.</h3>
+          <p>
+            Cafeterías, restaurantes y tiendas que quieren sumar kombucha y miel fermentada
+            a su oferta, sin complicarse con el reabasto. Te ayudamos con el volumen, el
+            precio y la entrega.
+          </p>
+          <div className="kombucha-facts" style={{ marginBottom: "26px" }}>
+            <div className="fact-pill">
+              <b>Ticket promedio más alto</b> — por encima de una bebida convencional.
+            </div>
+            <div className="fact-pill">
+              <b>Sin chamba extra</b> — nosotros nos encargamos del reabasto.
+            </div>
+            <div className="fact-pill">
+              <b>Producto con historia</b> — fermentado en lotes pequeños, con cultivos
+              vivos.
+            </div>
+          </div>
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+              "Hola, tengo un negocio y me gustaría conocer las condiciones para vender productos de MELS 🍯"
+            )}`}
+            className="wa-cta-btn"
+          >
+            📲 Contáctanos por WhatsApp
+          </a>
+        </div>
+      </section>
 
       <section className="section">
         <div className="container">

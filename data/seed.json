@@ -7,8 +7,11 @@
   "fourpack": {
     "id": "kombucha-fourpack",
     "name": "4 Pack (2 de cada una de nuestras variedades)",
-    "price": 220,
-    "compareAt": 260
+    "price": 210,
+    "compareAt": 240,
+    "units": 4,
+    "imageUrl": null,
+    "available": true
   },
   "categories": [
     { "id": "kombucha", "label": "Kombuchas", "cssClass": "cat-kombucha" },
